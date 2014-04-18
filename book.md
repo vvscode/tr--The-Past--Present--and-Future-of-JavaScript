@@ -94,23 +94,17 @@ Because JavaScript was supposed to support Java, Netscape management demanded th
 
 
 
-## ****Standardization 
+## ****Стандартизация 
 
+После выхода Javascript компания Microsoft реализовала аналогичный язык по измененным названием JScript в Internet Explorer 3.0 (август 1996). Netscape решила стандартизировать язык и обратилась в международную ассоциацию по стандартизации [Ecma International](http://en.wikipedia.org/wiki/Ecma) для введения стандарта.  Работа над спецификацией под названием ECMA-262 началась в ноябре 1996 года. Первая редакция ECMA-262 появилась в июне 1997. Из-за того что компания Sun (сейчас Oracle) имела права на тоговую марку со словом Java, язык, описываемый стандартом, не мог называться Javascript. Так что было выбрано следующее именование: ECMAScript - название стандарта для языка, его реализации официально называются Javascript, JScript и т.д. Вне официальных документов для обозначения реализация чаще всего используют название Javascript. Текущая версия языка ECMAScript - это 5.1, или говоря иначе ECMA-262 в редации 5.1. Эта версия так же стала ISO стандартом ISO/IEC 16262:2011.
 
+Язык ECMA-262 развивается под управлением [технического коммитета №39 ассоциации Ecma](http://www.ecma-international.org/memento/TC39.htm)(сокращенно ТС39). Его членами являются такие компании как Microsoft, Mozilla, Google которые выдвигают сотрудников для участия в работе комитета - среди других есть три человека: Брендан Эйк (автор языка),  Аллен Вирфс-Брок (инженер-разработчик языка JavaScript в Microsoft, один из редакторов стандарта) и Девид Херман. Работа ТС39 включает обсуждение дизайна следующих версий с открытыми источниками, такими как листы рассылки.
 
-
-After JavaScript came out, Microsoft implemented the same language, under the different name JScript, in Internet Explorer 3.0 \(August 1996\). Netscape decided to standardize JavaScript and asked the standards organization [Ecma International](http://en.wikipedia.org/wiki/Ecma) to host the standard. Work on a specification called ECMA-262 started in November 1996. The first edition of ECMA-262 came out in June 1997. Because Sun \(now Oracle\) had a trademark on the word Java, the language to be standardized couldn’t be called JavaScript. Hence, the following naming was chosen: ECMAScript is the name of the standard language, its implementations are officially called JavaScript, JScript, etc. Naturally, when talking unofficially about either the standard or its implementations, one mostly uses the term JavaScript. The current version of ECMAScript is 5.1, which means the same as ECMA-262, edition 5.1. That version has also become an ISO standard: ISO/IEC 16262:2011. 
-
-ECMA-262 is managed and evolved by Ecma’s [Technical Committee 39](http://www.ecma-international.org/memento/TC39.htm) \(short: TC39\). Its members are companies such as Microsoft, Mozilla, or Google, which appoint employees to participate in committee work — three names among several: Brendan Eich, Allen Wirfs-Brock \(editor of ECMA-262\) and David Herman. TC39’s work includes discussing the design of upcoming versions via open channels such as a mailing list. 
-
-Reaching consensus and creating a standard is not always easy, but thanks to it, JavaScript is a truly open language, with implementations by multiple vendors that are remarkably compatible. That compatibility is made possible by a very detailed and concrete specification. For example, it often uses pseudo-code to specify things. The specification is complemented by a test suite called [test262](http://test262.ecmascript.org/) that checks an ECMAScript implementation for compliance. It is interesting to note that ECMAScript is not managed by the World Wide Web Consortium \(W3C\). TC39 and the W3C collaborate wherever there is overlap between JavaScript and HTML5. 
-
-
+Достижение согласия с создание стандарта не всегда дается легко, но именно благодаря этому Javavscript является дейтсвительно открытым языком который поддерживается большим числом производителей ПО и отличается высокой степенью совместимости. Такая совместимость стала возможной благодаря детальной и четкой спецификации. Например для определения некоторого поведения используется псевдокод. Спецификация дополняется наборот тестов, который называется [test262](http://test262.ecmascript.org/). Он проверяет реализации языка на соответствие спецификации. Интересным является то, что ECMAScript на находится под управлением консорциума W3C. ТС39 и W3C сотрудничают везде, где пересекаются Javascript и HTML5.
 
 
 
 ## ****Historic JavaScript Milestones 
-
 
 
 
