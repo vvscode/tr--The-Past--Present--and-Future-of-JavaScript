@@ -2,42 +2,42 @@
 
 
 
-# The Past, Present, and Future of JavaScript
+# Прошлое, настоящее и будущее JavaScript
 
 
-**Table of Contents**
+**Содержание**
 >  
 > 
 > 
-1. The Past, Present, and Future of JavaScript
+1. Прошлое, настоящее и будущее JavaScript
 > >  
-> > The Past
+> > Прошлое
 > > >  
-> > > Standardization
+> > > Стандартизация
 
-> > > Historic JavaScript Milestones
+> > > Этапы развития JavaScript
 
-> > The Present
+> > Настоящее
 
-> > The Future
+> > Будущее
 > > >  
-> > > Evolving the Language
+> > > Эволюция языка
 
-> > > JavaScript as a Compilation Target
+> > > JavaScript как цель компиляции (?)
 
-> > > Writing Non-Web Applications in JavaScript
+> > > JavaScript вне сети (?)
 
-> > A JavaScript Wishlist
+> > Чего не хватает в JavaScript
 
-> > Conclusion
+> > Заключение
 
-> > References
-
-
+> > Ссылки
 
 
 
-# ****The Past, Present, and Future of JavaScript 
+
+
+# ****# Прошлое, настоящее и будущее JavaScript
 
 
 
@@ -46,49 +46,48 @@
 
 
 
-Published by O’Reilly Media  
+Опубликовано O’Reilly Media  
 
 
 
 ![](images/00000.jpeg)
 
-Beijing ⋅ Cambridge ⋅ Farnham ⋅ Köln ⋅ Sebastopol ⋅ Tokyo
+Пекин ⋅ Кембридж ⋅ Фарнхэм ⋅ Кельн ⋅ Севастополь ⋅ Токио
 
 
 
 
 
-# ****Chapter 1. The Past, Present, and Future of JavaScript 
+# ****Часть 1. Прошлое, настоящее и будущее JavaScript
 
 
 
 
-Over recent years, JavaScript has seen an impressive rise in popularity. Initially, that popularity was fueled by the success of client-side scripting, but JavaScript is increasingly being used in a general-purpose capacity, e.g. to write server and desktop applications. This article examines the JavaScript phenomenon from three angles: 
+За последние несколько лет JavaScript показал впечатляющий рост популярности. Первоначально эта популярность была обусловлена успехом сценариев на стороне клиента, но JavaScript все чаще используется для решения задач общего характера, например для написания серверных и настольных приложений. В данной книге(?) феномен JavaScript рассматривается под тремя углами: 
 
 
-+  The Past  
-+  The Present  
-+  The Future  
++  Прошлое
++  Настоящее  
++  Будущее  
 
 
-We conclude with a wish list and a few parting thoughts. 
-
-
-
-
-
-# ****The Past 
+В заключение список пожеланий и несколько напутственных слов
 
 
 
 
-In 1995, Netscape’s Navigator was the dominant web browser and the company decided to add interactivity to HTML pages, via a lightweight programming language. They hired Brendan Eich to implement it. He finished a first version of the language in 10 days, in May 1995. Its initial name was Mocha which was changed to the more Netscape-esque LiveScript in September. In December, Netscape and Sun had a licensing agreement that led to the programming language’s final name, JavaScript. At that point, it was included in Netscape Navigator 2.0B3. 
 
-The name “JavaScript” hints at the originally intended role for the language: Sun’s Java was to provide the large-scale building blocks for web applications, while JavaScript was to be the glue, connecting the blocks. Obviously, that shared client-side responsibility never transpired: JavaScript now dominates the browser, Java is mostly dead there. 
+# ****Прошлое
 
-JavaScript was influenced by several programming languages: The Lisp dialect Scheme gave it its rules for variable scoping, including closures. The Self programming language — a Smalltalk descendant — gave it prototypal inheritance \(object-based as opposed to class-based\). 
 
-Because JavaScript was supposed to support Java, Netscape management demanded that its syntax be similar to Java’s. That ruled out using other existing scripting languages such as Perl, Python or TCL. However, even though JavaScript’s syntax is similar to Java’s, [it is quite a different language](http://www.computerworld.com.au/article/255293/a-z_programming_languages_javascript/). \[1\] 
+
+В 1995 году Netscape Navigator был доминирующим браузером, и компания Netscape Communications приняла решение добавить интерактивности на HTML страницы при помощи легковесного языка программирования. Для разработки этого языка был приглашен Брендан Айк (Brendan Eich). Первая версия языка была уже готова спустя 10 дней, в мае 1995. Первоначально язык носил название Mocha, которое сентябре того же было изменено на новое в стиле Netscape - LiveScript. В декабре Netscape и Sun заключили лицензионное соглашение, которое определило окончательное имя языка - JavaScript. В это же время JavaScript был включен в Netscape Navigator 2.0B3. 
+
+Имя "JavaScript" намекает на начальное назначение языка: язык Java компании Sun предоставлял крупные строительные блоки для сетевых приложений, в то время как JavaScript должен был служить "клеем", соединяющим эти блоки. Очевидно, что разделение ответственности на стороне пользователя произошло: сегодня JavaScript доминирует в браузере, в то время как Java здесь практически вымерла. 
+
+JavaScript формировался под влиянием нескольких языков программирования: диалект Scheme языка Lisp привнес правила области видимости переменных, включая замыкания. Из языка программирования Self - потомка Smalltalk - было заимствовано наследование, основанное на прототипах \(объектно-ориентированное как противопоставление классово-ориентированному\).
+
+Поскольку предполагалось, что JavaScript будет выступать как поддержка Java, руководство Netscape потребовало, чтобы синтаксис нового языка был похож на синтаксис Java. Это исключило использование синтаксиса существующих скриптовых языков таких как Perl, Python или TCL. Однако несмотря на то, что синтаксис JavaScript похож на синтаксис Java, [это достаточно разные языки](http://www.computerworld.com.au/article/255293/a-z_programming_languages_javascript/). \[1\]
 
 
 
