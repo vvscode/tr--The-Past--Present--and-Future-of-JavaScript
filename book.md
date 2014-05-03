@@ -171,12 +171,12 @@ Ajax стал значительным прорывом JavaScript и динам
 
 
 
-# ****The Future 
+# ****Будущее
 
 
 
 
-The future brings many exciting developments for JavaScript: ECMAScript.next will fix quirks and add new features. It will also be a better target language for compilers. Support for concurrency is important and several options for JavaScript are currently being evaluated. Finally, HTML5 is becoming a compelling platform, not just for web applications, but also for mobile applications and desktop applications. 
+Будущее приносит для JavaScript множество интересных решений: ECMAScript.next исправит некоторые причуды языка и добавит новые возможности. JavaScript станет лучшим целевым языком для компилятора (?). Поддержка параллельных вычислений важна, и сейчас рассматривается несколько возможных вариантов. И в завершение, HTML5 становится отличной основой не только для web-приложений, но также для мобильных и настольных приложений.
 
 
 
