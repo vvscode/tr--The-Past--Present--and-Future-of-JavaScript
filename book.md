@@ -160,12 +160,12 @@ Ajax стал значительным прорывом JavaScript и динам
 
 
 
-# ****The Present 
+# ****Настояшее 
 
 
 
 
-Dynamic web applications led to JavaScript’s initial popularity. The Web had become an exciting ecosystem for applications, and you needed JavaScript to be part of it. As outlined above, many more pieces have since been added to the JavaScript puzzle that helped make it an appealing general-purpose language. JavaScript programs have become fast thanks to modern JavaScript engines. They can use JavaScript-centric databases and exchange data with their environment \(e.g. with web services\) via JSON. Server-side JavaScript allows one to use the same language for the server and for the client. Node.js also makes it possible to use JavaScript for build scripts and shell scripts. Lastly, JavaScript is possibly the most open programming language there is: no single party controls it, there is a well-written specification for it \(whose value cannot be overestimated\), and there are several highly compatible implementations available. 
+Благодаря динамическим web-приложениям JavaScript получил свою начальную популярность. Web стал отличной средой для разработки приложений, и было необходимо, чтобы JavaScript был ее частью. Как отмечалось выше, с тех пор очень много частей было добавлено в головоломку JavaScript с тем, чтобы сделать его более привлекательным как язык общего назначения. Такое быстрое развитие стало возможным благодаря современным JavaScript движкам. Они позволяют использовать JavaScript-ориентированные базы данных и обмениваться данными с другими системами \(например web-сервисами\) посредством JSON. Серверный JavaScript позволяет использовать один и тот же языка как на сервере, так и на клиентской стороне. Кроме того Node.js позволяет использовать JavaScript для скриптов сборки и скриптов командной строки. И напоследок, JavaScript, возможно, самый открытый язык программирования из существующих: нет единой группы, контролирующей язык; полная спецификация языка \(значение, которой нельзя переоценить\); доступно несколько хорошо совместимый реализаций. 
 
 
 
