@@ -182,27 +182,27 @@ Ajax стал значительным прорывом JavaScript и динам
 
 
 
-## ****Evolving the Language 
+## ****Эволюция языка
 
 
 
 
-After ECMAScript 3, there was a period where TC39 was divided on how to evolve the language. A [meeting](https://mail.mozilla.org/pipermail/es-discuss/2008-August/003400.html) in August 2008 resolved the division. The agreement was to develop both an incremental update \(which eventually became ECMAScript 5\) and major new language features. Those features were code-named Harmony, due to the nature of the meeting. ECMAScript Harmony is too large in scope to fit into a single version. Hence, there is another code name, ECMAScript.next, for the next version of ECMAScript. ECMAScript.next will probably become ECMAScript 6. Harmony’s requirements and goals are described as follows on the [ECMAScript wiki](http://wiki.ecmascript.org/doku.php?id=harmony:harmony) \[2\]: 
+После ECMAScript 3 был период, когда TC39 разделилась в вопросе дальнейшего развития языка. [Встреча](https://mail.mozilla.org/pipermail/es-discuss/2008-August/003400.html) в августе 2008 уладила разногласия. Решением стало дальнейшее развитие языка \(которое в конце концов переросло в ECMAScript 5\), а также реализация новых возможностей. Эти возможности, из-за характера встречи, носили кодовое имя Harmony (Гармония). Список изменений ECMAScript Harmony очень велик для того, чтобы уместить его в одну версию языка. Поэтому существовало другое кодовое название для следующей версии ECMAScript - ECMAScript.next. ECMAScript.next практически станет ECMAScript 6. Требования и цели Harmony описаны на [ECMAScript wiki](http://wiki.ecmascript.org/doku.php?id=harmony:harmony) \[2\]:
 
-Requirements:
-
-
-+  New features require concrete demonstrations.  
-+  Keep the language pleasant for casual developers.  
-+  Preserve the “start small and iteratively prototype” nature of the language.  
+Требования:
 
 
-Goal 1 \(of several\) is for ECMAScript Harmony to “be a better language for writing ...” 
++ Новые особенности требуют конкретной демонстрации.
++ Сохранить удобство написания кода для случайных разработчиков (?).
++ Сохранить "начни с малого и постепенно прототипируй (?)" природу языка.
 
 
-1.  complex applications;  
-2.  libraries \(possibly including the DOM\) shared by those applications;  
-3.  code generators targeting the new edition.  
+Первой целью \(из нескольких\) является сделать ECMAScript Harmony "лучшим языком для программирования ...".
+
+
+1. сложные приложения;
+2. библиотеки \(возможно, включающие DOM\) совместно используемые этими приложениями;
+3. генераторы кода, ориентированные на новое издание.  
 
 
 
