@@ -220,12 +220,11 @@ Ajax стал значительным прорывом JavaScript и динам
 
 
 
-### ****Block scoping via let and const 
+### ****Блочная область видимости посредством let and const 
 
 
 
-
-In current JavaScript, variables are function-scoped — if you declare a variable via `var`, it exists within all of the innermost function that surrounds it. In the following example, `tmp` is not confined to the then-block: 
+В текущей версии JavaScript переменные имеют область видимости внутри функции - если вы определяете переменную посредством `var`, она существует в любом месте функции окружающей объявление переменной.  В следующем примере, `tmp` не ограниченна блоком "если-то":
 
     function order(x, y) {
 
@@ -245,7 +244,7 @@ In current JavaScript, variables are function-scoped — if you declare a variab
 
     }
 
-ECMAScript.next will additionally have [block-scoped bindings](http://wiki.ecmascript.org/doku.php?id=harmony:block_scoped_bindings). Those are supported by `let`, `const` and block functions \(function declarations becoming block-scoped\). The `let` statement is a block-scoped version of `var` \(“`let` is the new `var`“\). Variables declared by it exist only within the innermost inclosing block. For example: 
+ECMAScript.next будет дополнительно иметь [блочные области видимости](http://wiki.ecmascript.org/doku.php?id=harmony:block_scoped_bindings). Их поддержка будет обеспечена ключеывми словами `let`, `const` и блочными функциями \(объявление фунций которое используется для создания блока видимости\). `let` - версия `var` с блочной видимостью \(“`let` это новый `var`“\). Переменные, объявленные с этим ключевым словом, будут доступны только внутри блока объявления. Например: 
 
     function order(x, y) {
 
@@ -265,7 +264,7 @@ ECMAScript.next will additionally have [block-scoped bindings](http://wiki.ecmas
 
     }
 
-`const` is similar to `let`, but variables declared by it can only be initialized once and cannot be changed afterward — they are read-only. Furthermore, you get an error if you read the variable before it has been initialized. For example: 
+`const` это тот же `let`, но переменные, объявленные с его помощью, могут быть проинициализированны только один раз — они становятся доступными только на чтение. Кроме того, если вы попытаетесь обратиться к ним до присвоения значения, вы получите ошибку. Например: 
 
     const BUFFER_SIZE = 256;
 
