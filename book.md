@@ -208,14 +208,13 @@ Ajax стал значительным прорывом JavaScript и динам
 
 
 
-### ****How features are added to ECMAScript.next 
+### ****Как происходит добавление функционала в новые версии ECMAScript
 
 
 
+Процесс добавления новой функциональности в стандарт выглядит следующим образом. Сначала предложение о нововведении пишется "чемпионом", экспертом в соответствующей области. Это позволяет избежать некоторых ловушек "совместного проектирования". Далее перспективные предложения проходят полевые испытания посредством прототипирования реализации для одного или нескольких браузеров. Если новшество оправдывает себя, его описание добавляется в проект следующей версии  ECMAScript \[3\]. Естественно, принимается во внимание обратная связь по результатам полевых испытаний.
 
-The process for adding a new feature to the standard is as follows. First, a proposal for the feature is written, by a “champion”, an expert in the relevant domain. That avoids some of the dangers of “design by committee”. Next, promising proposals are field-tested via prototype implementations in one or more browsers. If the feature proves itself, its specification is added to the ECMAScript.next draft \[3\]. Naturally, while taking feedback from the field test into account. 
-
-The following sections describe several ECMAScript.next proposals. Some of them are likely to be included \(e.g. `let`\), others are still under discussion \(e.g., class declarations, more number types\). Until the projected completion of ECMAScript.next at the end of 2013, nothing is set in stone. Features might change or TC39 might consider ECMAScript.next as having become too large and discard features. 
+В нескольких следующих разделах будут описаны несколько предложений для будущего ECMAScript. Некоторые из них наверняка будут реализованы \(например `let`\), другие все еще в стадии обсуждения \(например объявление классов, новые типы данных\). До завершения обсуждения в конце 2013 года \( на момент перевода - первая половина 2014 - стандарт еще не был принят \) все может поменяться. Нововведения могут измениться или TC39 посчитает, что они вносят слишком большие изменения в ECMAScript и отклонит эти изменения.
 
 
 
