@@ -272,39 +272,39 @@ ECMAScript.next будет дополнительно иметь [блочные
 
 
 
-### ****Handling parameters, assignment 
+### ***Обработка параметров, присвоение 
 
 
 
 
-ECMAScript.next will make the special variable `arguments` obsolete. Instead, one will be able to use [parameter default values](http://wiki.ecmascript.org/doku.php?id=harmony:parameter_default_values) and [rest parameters](http://wiki.ecmascript.org/doku.php?id=harmony:rest_parameters): 
+В ECMAScript.next специальный аргумент `arguments` станет устаревшим. Вместо него будут доступны [значения параметров по умолчанию](http://wiki.ecmascript.org/doku.php?id=harmony:parameter_default_values) и [список аргументов переменной длины](http://wiki.ecmascript.org/doku.php?id=harmony:rest_parameters):
 
-    // Parameter default values
+    // Значения параметров по умолчанию
 
     function foo(mandatory, optional1=123, optional2="abc") { ... }
 
 
 
-    // Rest parameters
+    // Список аргументов переменной длины
 
     function bar(arg1, ...remainingArguments) { ... }
 
-Assignment can be [destructuring](http://wiki.ecmascript.org/doku.php?id=harmony:destructuring), it can extract values from the right-hand side, via a simple form of pattern matching: 
+Присваивание может быть [разрушающим (destructuring assignment)] (http://wiki.ecmascript.org/doku.php?id=harmony:destructuring). Такое присваивание сопоставляет значения справа и слева от оператора присваивания, используя простой шаблон соответствия:
 
-    // Swap the values of a and b
+    // Обмен значения переменных a и b
 
     let [b, a] = [a, b];
 
 
-    // Assign the value of property x to horiz
+    // Присваивание значения x переменной horiz
 
     let { x: horiz } = { x: 5, y: 3 };
 
     console.log(horiz);  // 5
 
-Destructuring works even for parameters, which is handy if you want to have labeled optional parameters: 
+Разрушающее присваивание очень удобноЮ если необходимо указать необязательные параметры:
 
-    // Declare
+// Объявление функции
 
     function moveBy(point, { x = 0, y = 0 }) {
 
@@ -313,15 +313,16 @@ Destructuring works even for parameters, which is handy if you want to have labe
     }
 
 
-    // Call
+    // Вызов
 
     moveBy(somePoint, { x: 2, y: 7 });
 
     moveBy(somePoint, {});
 
-One can also allow the object with the optional parameters to be omitted: 
 
-    // Declare
+Также возможно определить объект с дополнительными параметрами, значения которых могут быть опущены:
+
+    // Объявление
 
     function moveBy(point, { x = 0, y = 0 } = { x: 0, y: 0 }) {
 
@@ -330,11 +331,11 @@ One can also allow the object with the optional parameters to be omitted:
     }
 
 
-    // Call
+    // Вызов
 
     moveBy(somePoint);
 
-The invocation analog of a rest parameter is the [spread operator](http://wiki.ecmascript.org/doku.php?id=harmony:spread): 
+Аналогом списка аргументов переменной длинны является использование [спред-оператор(?) (spread operator)](http://wiki.ecmascript.org/doku.php?id=harmony:spread): 
 
     function myfunc(...args) {
 
@@ -342,7 +343,7 @@ The invocation analog of a rest parameter is the [spread operator](http://wiki.e
 
     }
 
-In ECMAScript 5, you would write the following code, instead: 
+В ECMAScript 5, эта запись может быть переписана следующим образом: 
 
     function myfunc() {
 
