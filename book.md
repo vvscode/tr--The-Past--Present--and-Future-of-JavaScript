@@ -416,49 +416,48 @@ The body of an arrow function can also be an expression, making code much more r
 
 
 
-### ****Object literals 
+### ****Литералы объектов 
 
 
 
 
-There are several proposals for constructs that help with JavaScript object-orientation. Object literals will get a [large upgrade](http://wiki.ecmascript.org/doku.php?id=harmony:object_literals): 
+Рассматривается несколько вариантов, которые призваны упростить использование объектной ориентации в JavaScript. Литералы объектов претерпят [большие изменения](http://wiki.ecmascript.org/doku.php?id=harmony:object_literals): 
 
-    let name = "foo";
+let name = "foo";
 
-    let obj = MyProto <| {        // "prototype for" operator
+    let obj = MyProto <| {        // оператор прототипирования
 
-        myMethod(arg1, arg2) {           // method definition
+        myMethod(arg1, arg2) {           // определение метода
 
-            super.myMethod(arg1, arg2);    // super reference
+            super.myMethod(arg1, arg2);    // ссылка на родительский объект
 
         },
 
-        [name]: 123,                 // computed property key
+        [name]: 123,                 // вычисляемое имя свойства
 
-        bar                       // property value shorthand
+        bar                       // короткая запись значения свойства
 
     }
 
-Features shown above:
+Использованные особенности:
 
-**Prototype-for operator** \(<|\) lets you specify the prototype of a literal, which is certainly more convenient than `Object.create()`. And it mostly obviates the need for the special property `__proto__` which is non-standard and problematic. 
+**Оператор прототипирования** \(<|\) позволяет указать литерал прототипа, что значительно удобнее, чем использование `Object.create()` и практически устраняет необходимость в свойстве `__proto__`, которое является нестандартным и проблематично в использовании.
 
-**Method definitions** can be made via a shorter syntax. 
+**Определение метода** может использовать короткую запись.
 
-**Super-references** let you refer to a property appearing later in the prototype chain. The search for such a property starts in the prototype of the object where the method is located. Note that this way of referring to super-properties works for both subtypes \(where one can, e.g., refer to a method of the supertype that has been overridden\) and directly constructed prototype chains. 
+**Ссылка на родительский объект** позволяет ссылаться на свойство, которое было определенно ранее в цепочке прототипов. Поиск свойства начинается в прототипе объекта, в контексте которого определен текущий метод. Заметим, что это способ обращения к свойству родительского объекта работает как для подтипов \(если возможно, например, ссылается на метод супертипа, который был изменен\), так и для непосредственно построенных цепочек прототипов (?).
 
-**Computed property keys** are a way to specify the name of a property via an expression \(which is especially useful for private name objects — see below\). 
+**Вычисляемый ключ свойства** - это способ указать имя свойства посредством выражения \(которое особенно полезно для защищенных объектов - см. пример ниже\)
 
-**A property value shorthand** eliminates some redundancy when filling an object literal with data. `bar` is an abbreviation for 
+**Сокращенная запись значений свойств** сокращает некоторую избыточность при заполнении литерала объекта значениями. При такой записи `bar` является сокращением для 
 
-    bar: bar
+bar: bar
 
-More examples:
+Еще несколько примеров:
 
-    { foo }   // same as { foo: foo }
+{ foo }   // аналогично { foo: foo }
 
-    { x, y }  // same as { x: x, y: y }
-
+{ x, y }  // тоже самое, что и { x: x, y: y }
 
 
 
