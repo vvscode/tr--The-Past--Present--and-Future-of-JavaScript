@@ -462,12 +462,12 @@ bar: bar
 
 
 
-### ****Object extension literals 
+### ****Литералы расширения(?) объекта 
 
 
 
 
-With super-references, a method is much tighter bound to the object it is stored in and [needs to have a reference to it](http://www.2ality.com/2011/11/super-references.html). The method definition syntax above takes care of that and is thus the preferred way of creating methods. An [object extension literal](http://wiki.ecmascript.org/doku.php?id=harmony:object_literals#object_extension_literal) ensures that this syntax can also be used to add methods to an existing object. Example: 
+Метод, имеющий реализацию в родетильском объекте, но тесно связанный с объектом, в контексте которго он храниться, [должен иметь ссылку на реализацию этого метода в объекте-родителе](http://www.2ality.com/2011/11/super-references.html). Синтаксис определения метода, указанный выше, заботится о этом и является предпочтительным способом при создании метода. [Литерал расширения объекта](http://wiki.ecmascript.org/doku.php?id=harmony:object_literals#object_extension_literal) гарантирует, что такой синтаксис также может использоваться для добавления новых методов в существующий объект. Пример: 
 
     obj.{
 
@@ -479,7 +479,7 @@ With super-references, a method is much tighter bound to the object it is stored
 
     }
 
-If you want to add the above method “manually,” you can’t use assignment, you have to use the new function `Object.defineMethod`: 
+Для того чтобы добавить метод "вручную", нельзя использовать присваивание, вместо этого нужно использовать новую функцию `Object.defineMethod`: 
 
     Object.defineMethod(obj, "anotherMethod", function (x) {
 
@@ -487,15 +487,14 @@ If you want to add the above method “manually,” you can’t use assignment, 
 
     });
 
-Another example:
-
+Еще пример:
     function Point(x, y) {
 
         this.{ x, y };
 
     }
 
-This is equivalent to:
+эквивалентная запись:
 
     function Point(x, y) {
 
