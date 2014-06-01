@@ -355,12 +355,12 @@ ECMAScript.next будет дополнительно иметь [блочные
 
 
 
-### ****Arrow functions 
+### ****Стрелочные функции
 
 
 
 
-JavaScript uses the same construct, the function, for both methods and non-method functions. The problem with the former is that it is potentially confusing to read the word `function` in the context of a method definition. The problem with the latter is that you want to access the `this` of the surrounding context \(“lexical `this`“\), instead of shadowing it with your own `this`. To work around this limitation, one often uses a pattern such as `that = this` \(\*\): 
+JavaScript использует одну и ту же конструкцию для создания функций, будь это метод объекта или независимая функция. Вас может смутить ключевое слово `function` в контексте объявления метода. Еще одна проблема, которая становится заметной позже, это значение  `this` в контексте выполнения \(“лексемма `this`“\), вместо использования вашего объекта в качестве `this`. Для обхода этого ограничения часто используется паттерн сохранения контекста `that = this` \(\*\): 
 
     let jane = {
 
@@ -381,7 +381,7 @@ JavaScript uses the same construct, the function, for both methods and non-metho
 
     }
 
-ECMAScript.next fixes both problems. First, there is a shorter notation for defining methods \(\*\). Second, it has [arrow functions](http://wiki.ecmascript.org/doku.php?id=strawman:arrow_function_syntax) with lexical `this` \(\*\*\): 
+ECMAScript.next исправляет обе проблемы. Во-первых, более корокая запись при объявлении методов \(\*\). Во-вторых, решает вопрос доступа к контексту [arrow functions](http://wiki.ecmascript.org/doku.php?id=strawman:arrow_function_syntax) при помощи лексеммы `this` \(\*\*\): 
 
     let jane = {
 
@@ -400,13 +400,13 @@ ECMAScript.next fixes both problems. First, there is a shorter notation for defi
 
     }
 
-An arrow function achieves lexical `this` via binding, so the following two statements are roughly equivalent \(`bind` creates two function objects, an arrow function only a single one\): 
+Стрелочная функция получает лексемму this через привязку, так что следующие два примера будут примерно равнозначеными \(`bind` создаст два объекта-функции, а стрелочная функция только один\): 
 
     let func = (a, b) => { return this.offset + a + b }
 
     let func = function (a, b) { return this.offset + a + b }.bind(this);
 
-The body of an arrow function can also be an expression, making code much more readable. Compare: 
+Тело стрелочной функции так же может быть выражениями, что сделает код более читабельным. Сравните: 
 
     let squares = [ 1, 2, 3 ].map(function (x) { return x * x });
 
