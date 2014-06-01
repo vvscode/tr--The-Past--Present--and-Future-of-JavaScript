@@ -508,30 +508,22 @@ bar: bar
 
 
 
-### ****Private name objects 
+### ****Частные свойства
+
+Если вы хотите сделать приватные члены класса то в JavaScript у вас есть два возможнных пути: вы можете поместить их в окружение конструктора, или вы можете хранить их в свойствах со специальными именами \(например начинающихся с подчеркивания\). Использование окражения конструктора означает, что только методы, которые были добавленные внутри него будут иметь доступ к скрытым данным, но не т.н. публичные методы, которые были добавлены через прототип. Чтобы получить такой доступ они нуждаются в помощи "привелегированных" методов, добавленных к сущности в конструкторе.
 
 
 
+### Замечание
 
-If you want to keep data private in JavaScript, you currently have two main options: You can either put it into the environment of the constructor, or you can keep it in properties with special names \(e.g. starting with an underscore\). Using the environment of the constructor means that only methods that are added there can access private data, but not, say, “public” methods in the prototype. To do so, they need “privileged” methods that have been added to the instance in the constructor. 
-
-
-
+Следующий пример не является рабочим кодом, но он демонстрирует то, как это работает.
 
 
-### Note
-
-The following example is not realistic, but it illustrates how things work. 
-
-
-
-
-
-    // Private data: factor
+    // Скрытые данные: factor
 
     function Multiplier(factor) {
 
-        // Privileged method:
+        // Привелегированный метод:
 
         this.getFactor = function() {
 
@@ -541,7 +533,7 @@ The following example is not realistic, but it illustrates how things work.
 
     }
 
-    // Public method:
+    // Публичный метод:
 
     MyType.prototype.multiply = function (value) {
 
@@ -549,17 +541,17 @@ The following example is not realistic, but it illustrates how things work.
 
     };
 
-The following code is similar, but keeps the private data in the property `_factor`. The name starting with an underscore marks that property as private. The problem with this approach is that such properties occupy the same namespace as public properties and pollute it, when they should be hidden. And the private data is not safe from outside access. 
+Следующий код аналогичен, но скрытые данные хранятся в свойстве `_factor`. Имя, начинающееся с подчеркивания, означает, что переменная частная. Проблема такого подхода в том, что данные занимают имя свойства в публичной области видимости и загрязняет ее тогда, когда просто должны быть скрыты. Кроме того такие частные переменные никак не защищены от доступа из вне. 
 
     function Multiplier(factor) {
 
-        // Private data:
+        // Частная переменная:
 
         this._factor = factor;
 
     }
 
-    // Public method:
+    // Публичный метод:
 
     MyType.prototype.multiply = function (value) {
 
@@ -567,22 +559,22 @@ The following code is similar, but keeps the private data in the property `_fact
 
     };
 
-The proposal “[private name objects](http://wiki.ecmascript.org/doku.php?id=harmony:private_name_objects)” for ECMAScript.next combines the advantages of both approaches and works as follows. Currently, property names have to be strings. The proposal additionally allows one to use name objects that have to be explicitly created and are unique and unforgeable: 
+Предложение “[именование частных свойств](http://wiki.ecmascript.org/doku.php?id=harmony:private_name_objects)” для ECMAScript.next комбинирует преимущества двух подходом и работает следующим образом. В данный момент, имя свойства должно быть строкой. Предложение дополнительно позмоляет использовать явно заданные имена свойств объекта, но они должны быть уникальными в пределах списка свойств: 
 
     import Name from "@name";
 
-    let factorKey = new Name();  // create private name object
+    let factorKey = new Name();  // Создаем объект имени частного свойста
 
 
     function Multiplier(factor) {
 
-        // Private data:
+        // частное свойство:
 
         this[factorKey] = factor;
 
     }
 
-    // Public method:
+    // Публичный метод:
 
     MyType.prototype.multiply = function (value) {
 
@@ -590,8 +582,7 @@ The proposal “[private name objects](http://wiki.ecmascript.org/doku.php?id=ha
 
     };
 
-The property whose name is the name object `factorKey` cannot be found via any enumeration mechanism \(`Object.getOwnPropertyNames()`, `for...in`, etc.\). And one can only access its value if one has its name. Hence, there is no namespace pollution and the private data is safe. 
-
+Свойство, чье имя заданно значением объекта `factorKey` не может быть найдено ниодним из механизмов рефлексии \(`Object.getOwnPropertyNames()`, `for...in`, etc.\). Единственный способ обратиться к его значениею - обратиться к нему по имени. Таким образом область именования не загрязняется, а данные безопасно скрыты от внешнего воздействия.
 
 
 
