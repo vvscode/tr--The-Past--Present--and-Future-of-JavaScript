@@ -587,16 +587,13 @@ bar: bar
 
 
 
-### ****Class declarations 
+### ****Объявление классов 
 
+Реализация одинаковых типов через функции-конструкторы в JavaScript достаточно простая, но вот реализация наследования слишком сложная а создание ссылок на объект-родитель выглядит неуклюже.
 
+Сейчас приходится писать такой код:
 
-
-Implementing single types via constructor functions is reasonably easy in JavaScript, but subtyping is too complicated and making super-references is clumsy. 
-
-Right now, you have to write:
-
-    // Supertype
+    // Родитель
 
     function Point(x, y) {
 
@@ -613,7 +610,7 @@ Right now, you have to write:
     };
 
 
-    // Subtype
+    // Наследник
 
     function ColorPoint(x, y, color) {
 
@@ -633,9 +630,9 @@ Right now, you have to write:
 
     };
 
-If the proposal “[maximally minimal classes](http://wiki.ecmascript.org/doku.php?id=strawman:maximally_minimal_classes)” is accepted, you’ll be able to write the following, instead. 
+Если предложение “[максимально минимизированные классы](http://wiki.ecmascript.org/doku.php?id=strawman:maximally_minimal_classes)” будет принято, то вместо этого вы сможете писать такой код: 
 
-    // Supertype
+    // Родитель
 
     class Point {
 
@@ -656,7 +653,7 @@ If the proposal “[maximally minimal classes](http://wiki.ecmascript.org/doku.p
     }
 
 
-    // Subtype
+    // Наследник
 
     class ColorPoint extends Point {
 
