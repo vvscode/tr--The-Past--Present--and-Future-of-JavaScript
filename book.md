@@ -705,7 +705,7 @@ JavaScript не имеет встроенной поддержки модуле�
 
 
 
-One can use the `for...in` loop to iterate over objects. However, that loop has several quirks. ECMAScript.next will introduce a new [iteration infrastructure](http://wiki.ecmascript.org/doku.php?id=harmony:iterators), including a `for...of` loop that fixes the `for...in` quirks. For example, it iterates over the elements of an array, not over the property names: 
+Для обхода свойств объекта можно использовать цикл `for...in`. Однако, этот цикл имеет несколько особенностей. ECMAScript.next представит новую [систему итераторов](http://wiki.ecmascript.org/doku.php?id=harmony:iterators), включающую в себя цикл `for...of` , который исправит недостатки `for...in`. Например, он пройдет по всем элементам массива, но не затронет именованные свойства: 
 
     let arr = [ "hello", "world" ];
 
@@ -715,18 +715,18 @@ One can use the `for...in` loop to iterate over objects. However, that loop has 
 
     }
 
-Output:
+Вывод:
 
     hello
 
     world
 
-Iterating over objects has also become more convenient:
+Перебор свойств объекта также станет удобнее:
 
     let obj = { first: "Jane", last: "Doe" };
 
 
-    // Iterate over properties
+    // Перебор свойств
 
     for (let [name, value] of obj) {
 
@@ -735,7 +735,7 @@ Iterating over objects has also become more convenient:
     }
 
 
-    // Iterate over property names
+    // Перебор имен свойств
 
     import keys from "@iter";  // returns an iterable (see below)
 
@@ -745,25 +745,25 @@ Iterating over objects has also become more convenient:
 
     }
 
-`for...of` works in conjunction with an iteration protocol: An object can implement a custom way of being iterated over if it has a method `iterate()` that returns a so-called iterator object \(short: iterator\). An object with such a method is called an iterable. The name of the method is a name object \(see above\). An iterator has a single method `next()` that, when invoked often enough, returns all the “elements” of the iterable. If it is invoked more times than the number of elements, a `StopIteration` exception is thrown. For example: 
+`for...of` работает в сочетании с интерфейсом итерации: объект может реализовать свой собственный механизм итерации за счет реализации метода `iterate()`, который вернет  т.н. объект-итератор \(итератор\). Объект с таким методом называется итерируемым. Название метода совпадает с именем объекта \(??\) \(см. выше\). Итератор имеет один единственный метод `next()` который при последовательном вызове вернет все  “элементы” итерируемого объекта. Если метод будет вызван больше раз, чем имеющееся количество элементов, то будет выброшено исключение `StopIteration`. Например: 
 
-    import iterate from "@iter";  // name object
+    import iterate from "@iter";  // имя объекта
 
     function iterArray(arr) {
 
         let i = -1;
 
-        // The returned object is both iterable and iterator
+        // Возвращаемый объект является одновременно и итерируемым и итератором
 
         return {
 
-            [iterate]() {  // property name is a name object
+            [iterate]() {  // свойство с именем объекта
 
-                return this;  // an iterator
+                return this;  // итератор
 
             },
 
-            next() {  // iterator method
+            next() {  // метод итерации
 
                 i++;
 
@@ -783,7 +783,7 @@ Iterating over objects has also become more convenient:
 
     }
 
-`iterArray()` is used as follows: 
+`iterArray()` можно использовать следующим образом: 
 
     for (let elem of iterArray(["a", "b"])) {
 
