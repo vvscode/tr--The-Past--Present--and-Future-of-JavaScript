@@ -677,12 +677,11 @@ bar: bar
 
 
 
-### ****Modules 
+### ****Модули
 
 
+JavaScript не имеет встроенной поддержки модулей для импорта и экспорта. Вы можете реализовать мощную модульную систему на этом языке, но есть несколько конкурирующих  стандартов. Самые важные из них - два: асинхронное объявление модулей \(Asynchronous Module Definitions - AMD \) на стороне клиента и модули  Node.js  \(которые очень близки к стандарту CommonJS\) на стороне сервера. ECMAScript.next обеспечит общий  [стандарт модулей](http://wiki.ecmascript.org/doku.php?id=harmony:modules) для языка. Ниже демонстрируется пример объявления модуля 
 
-
-JavaScript has no built-in support for modules with imports and exports. You can implement quite powerful module systems in the language, but there are several competing standards. The two most important ones are: Asynchronous Module Definitions on the client side and Node.js modules \(which stay very close to the CommonJS standard\) on the server side. ECMAScript.next will provide a common [module standard](http://wiki.ecmascript.org/doku.php?id=harmony:modules) for the language. The following shows the module definition syntax in action. 
 
     import 'http://json.org/modules/json2.js' as JSON;
 
@@ -697,9 +696,7 @@ JavaScript has no built-in support for modules with imports and exports. You can
 
     }
 
-ECMAScript.next modules are more static than module systems implemented in JavaScript. That enables benefits such as better performance, pre-fetching, and compile-time checking \(find unbound variables etc.\). 
-
-
+Модули  из ECMAScript.next более статичны, чем модульные системы, которые реализованный в JavaScript сейчас. Это обеспечит такие преимущества, как быстродействие, предзагрузку и проверку на этапе компиляции \(поиск не связанных переменных и т.п.\)
 
 
 
