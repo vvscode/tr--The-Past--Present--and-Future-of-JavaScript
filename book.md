@@ -979,30 +979,28 @@ Writing the same code with callbacks is much more complicated:
 
 
 
-### ****More number types 
+### ****Больше числовых типов
 
-
-
-
-All numbers in JavaScript are 64-bit floating point \(IEEE 754 double precision\). Of those 64 bits, only 53 are available for integers. Naturally, one faces the problem of limited precision when it comes to very large numbers or very small fractions. But the main problem for JavaScript in non-scientific computing is that it can’t handle 64-bit integers, which are very common, e.g. as database keys. Then the question is how to best add support for more number types to the language. ECMAScript.next will probably do so via [value objects](http://wiki.ecmascript.org/doku.php?id=strawman:value_objects). Value objects are objects \(non-primitive values\) that are immutable. Where normal objects \(reference objects\) are compared by reference, value objects are compared by value \(one “looks inside” such objects when comparing\). 
+Все числа в JavaScript являются 64-битными с плавающей точкой \(IEEE 754 двойной точности\). Из этих 64 бит только 53 доступны для целых чисел. Естественно, когда речь идет об очень больших числах или очень маленьких приращениях мы сталкиваемся с проблемой ограниченной точности. Но главной проблемой для использования JavaScript в ненаучных вычислениях является то, что он не может обрабатывать 64-битные целые числа, которые очень распространены \(например для уникальных ключей \). В этой ситуации встает вопрос, как лучше всего добавить поддержку нескольких числовых типов в язык.  ECMAScript.next скорее всего сделает это с помощью [значимых объектов](http://wiki.ecmascript.org/doku.php?id=strawman:value_objects). Значимые объекты являются объектами \(не примитивными значениями\), которые неизменны. Тогда как обычные объекты сравниваются по-ссылке, значимые объекты сравниваются по значению \(по тому что "внутри" у таких сравниваемых объектов \).
 
     {} === {}  // false
 
     uint64(123) === uint64(123)  // true
 
-`uint64` is a constructor for 64-bit unsigned integers. Not using the `new` operator and the name starting with a lowercase letter are indications that value objects are different from reference objects. Value objects are considered objects by `typeof`: 
+
+`uint64` является конструктором для 64-битного представления целых чисел. Отсутствие использования оператора `new` и имя в нижнем регистре являются признаком того, что значимые объекты отличаются от ссылочных объектов. Значимые объекты считаются объектами, что подтверждается конструкцией `typeof`: 
 
     typeof uint64(123)  // "object"
 
-That means that current code won’t be confused when it is confronted with a value object. In contrast, adding new primitive types to the language would likely cause more problems. For ECMAScript.next, value objects will probably only be used to introduce new number types. Later, programmers might be able to implement their own object value types, possibly including overloaded operators. Thanks to `uint64` values being immutable and compared by value, JavaScript engines have the option of directly working with \(unboxed\) 64-bit values. That should bring considerable performance benefits to the language. The [current prototype implementation](https://bugzilla.mozilla.org/show_bug.cgi?id=749786) \[4\] in Firefox gives you just `uint64` \(unsigned 64-bit integers\) and `int64` \(signed 64-bit integers\), plus properly working operators \(`+`, `*`, etc.\). There are also literals such as `-123L` for `int64(-123)`. 
+Это означает, что существующий код не будет сбит столку если натолкнется на значимый объект. В отличии от этого, добавление новых примитивных типов в язык скорее всего вызовет появление большого количества проблем. В ECMAScript.next значимые объекты скорее всего будут единственным способом добавить новые числовые типы. Позже программисты смогут добавлять реализации своих собственных типов значимых объектов. Возможно с поддержкой перегрузки операторов. Благодаря тому, что `uint64` будут неизменными и сравниваться по значению, JavaScript движки получат возможность напрямую \(без оберток \) работать с 64-битными значениями. Это должно привнести значительные преимущества для производительности. [Текущая реализация прототипов](https://bugzilla.mozilla.org/show_bug.cgi?id=749786) \[4\] в Firefox предоставляет просто `uint64` \(без-знаковые 64-битные целые\) и `int64` \(знаковые 64-битные целые\), плюс корректно работающие операторы \(`+`, `*`, и т.п.\). Так же реализованы литералы вроде `-123L` для `int64(-123)`. 
 
-For example:
+Например:
 
     > 123L + 7L
 
     130L
 
-More number types might be supported later.
+Поддержка остальные числовых типов будет добавлена позже.
 
 
 
