@@ -797,12 +797,10 @@ JavaScript не имеет встроенной поддержки модуле�
 
 ### ****Generators 
 
+[Генераторы](http://wiki.ecmascript.org/doku.php?id=harmony:generators) - это легковесные подпрограммы. При вызове они создают объект, который является оберткой фукции. Выполнение функции можно продолжать с помощью метода `next()` и приостанавливать выполнение при помощи оператора `yield`  \(внутри функции\); `yield` очень похож на оператор `return` и обеспечивает возвращаемое значения для  вызова `next()`. Генератор создается ключевым словом `function*` \(нельзя использовать ключевое слово `generator` т.к. это может сломать существующий код\). Давайте позьмем обычную функцию `iterTreeFunc` и превратим ее в генератор. 
 
 
-
-[Generators](http://wiki.ecmascript.org/doku.php?id=harmony:generators) are lightweight co-routines. When invoked, they create an object that wraps a function. One can continue the evaluation of that function via the `next()` method and pause the execution via the `yield` operator \(inside the function\); `yield` is closely related to `return` and provides the value that `next()` returns. A generator is produced via the keyword `function*` \(alas, one couldn’t use the keyword `generator` because that might break existing code\). Let’s take the following non-generator function `iterTreeFunc` and turn it into a generator. 
-
-    // Iterate over a tree of nested arrays
+    // Проход по дереву вложенных массивов
 
     function iterTreeFunc(tree, callback) {
 
@@ -826,7 +824,7 @@ JavaScript не имеет встроенной поддержки модуле�
 
     }
 
-Interaction:
+Использование:
 
     > iterTreeFunc([[0, 1], 2], function (x) { console.log(x) });
 
@@ -836,7 +834,7 @@ Interaction:
 
     2
 
-`iterTreeFunc` looks as follows if written as a generator: 
+`iterTreeFunc` выглядела бы следующим образом, если бы была написана как генератор: 
 
     function* iterTree(tree) {
 
@@ -860,7 +858,7 @@ Interaction:
 
     }
 
-Interaction:
+Использование:
 
     > let gen = iterTree([[0, 1], 2]);
 
@@ -878,9 +876,9 @@ Interaction:
 
     > gen.next()
 
-    Exception: StopIteration
+    Исключение: StopIteration
 
-As you can see, the generator object is also an iterator and can thus be iterated over: 
+Как видно генератор так же является итератором, так что по нему можно проходить циклом: 
 
     for (let x of iterTree([[0, 1], 2])) {
 
@@ -888,7 +886,7 @@ As you can see, the generator object is also an iterator and can thus be iterate
 
     }
 
-**task.js — an application of generators.** If you want to see an intriguing application of generators, take a look at David Herman’s [task.js](http://taskjs.org/) library. It lets you write asynchronous code in a synchronous style, via generators. The following is an example of task.js-enabled code \(slightly edited from [task.js](https://github.com/mozilla/task.js) on GitHub\). 
+**task.js — пример использования генераторов.** Если вы хотите посмотреть на интересные приемы применения генераторов, ва стоит посмотреть на библиотеку [task.js](http://taskjs.org/) Дэвида Германа. Она позволяет писать асинхронный код в синхронном стиле посредством генераторов. Ниже пример кода с подключением task.js \(немного отредактированная [task.js](https://github.com/mozilla/task.js) на GitHub\). 
 
     spawn(function* () {
 
@@ -912,7 +910,7 @@ As you can see, the generator object is also an iterator and can thus be iterate
 
     });
 
-Writing the same code with callbacks is much more complicated: 
+Тот же самый код написанный с использованием колбэков гораздо сложнее: 
 
     var foo, bar;
 
