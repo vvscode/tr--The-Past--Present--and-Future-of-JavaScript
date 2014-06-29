@@ -1004,12 +1004,12 @@ JavaScript не имеет встроенной поддержки модуле�
 
 
 
-### ****Binary data 
+### ****Двоичные данные
 
 
 
 
-JavaScript is increasingly used in areas where it has to process binary data as efficiently as possible. Examples: handle network protocols, decode video, interoperate with native APIs and processors, and encode and decode various serialization formats. In order to support these use cases, there is a [proposal](http://wiki.ecmascript.org/doku.php?id=harmony:binary_data) for binary data types: 
+JavaScript все чаще используется в тех областях, где необходима максильно эффективная работа с двоичными данными. Нарпимер: обработка сетевых пакетов, декодирование видео, взаимодествие со встроенным API и процессорами, кодирование и декодированме различных форматов данных. Для поддержки таких вариантов использования языка было внесено [предложение](http://wiki.ecmascript.org/doku.php?id=harmony:binary_data) о типах бинарных данных: 
 
     const Point = new StructType({ x: uint32, y: uint32 });
 
@@ -1021,7 +1021,7 @@ JavaScript is increasingly used in areas where it has to process binary data as 
 
     ]);
 
-`Point` and `Triangle` are binary data types, and can be used to parse and generate binary data. 
+`Point` и `Triangle` - это бинарные типы данных, и могут быть использованы для обработки и генерирования двоичных данных. 
 
 
 
