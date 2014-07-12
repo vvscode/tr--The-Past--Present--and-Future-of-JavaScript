@@ -1098,18 +1098,18 @@ JavaScript все чаще используется в тех областях, 
 
 
 
-### ****Proxies 
+### ****Прокси 
 
 
 
 
-[Proxies](http://wiki.ecmascript.org/doku.php?id=harmony:proxies_spec) allow you to put a handler “in front of” an object to intercept operations applied to it. Given the following definitions: 
+[Прокси](http://wiki.ecmascript.org/doku.php?id=harmony:proxies_spec) позволяет Вам поместить обработчик "перед" объектом, для того чтобы перехватить операцию, применяемою к данному объекту. Выглядит это следующим образом: 
 
-    // target points to an object
+    // target указывает на объект
 
     let proxy = Proxy(target, handler);
 
-Each of the following operations triggers a method invocation on `handler`: 
+При каждой из следующих операций будет выполнен соответствующий метод обработчика `handler`: 
 
     proxy["foo"]             → handler.get(target, "foo", proxy)
 
@@ -1119,11 +1119,11 @@ Each of the following operations triggers a method invocation on `handler`:
 
     for (key in proxy) {...} → handler.enumerate(target)
 
-Proxies can also be put into the prototype chain of an object: 
+Прокси также может быть помещен в цепочку прототипов объекта:
 
     let child = Object.create(proxy)
 
-Operations on `child` that are passed on to the prototype `proxy` obviously still trigger handler method invocations: 
+Операции над `child`, в прототип которого был передан `proxy`, очевидно, будут вызывать выполнение соответствущих методов обработчика:
 
     child["foo"]             → handler.get(target, "foo", child)
 
@@ -1133,7 +1133,7 @@ Operations on `child` that are passed on to the prototype `proxy` obviously stil
 
     for (key in child) {...} → handler.enumerate(target)
 
-One application of this is to turn a proxy into a sentinel for methods that don’t exist: 
+Одно из возможных применений - это отслеживание вызова несуществующих методов: 
 
     let handler = {
 
@@ -1151,7 +1151,7 @@ One application of this is to turn a proxy into a sentinel for methods that don�
 
     let proxy = Proxy({}, handler);
 
-Using the handler:
+Использование:
 
     $ let obj = Object.create(proxy);
 
@@ -1161,13 +1161,13 @@ Using the handler:
 
     undefined
 
-Use cases for proxies include meta-programming tasks such as: 
+Варианты использования прокси включают такие задачи как:
 
 
-+  Sending all method invocations to a remote object  
-+  Implementing data access objects for a database  
-+  Data binding  
-+  Logging  
++  Перенаправление вызова методов другому объекту  
++  Создание объектов доступа к базе данных
++  Привязка данных 
++  Логирование  
 
 
 
