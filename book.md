@@ -1173,19 +1173,19 @@ JavaScript все чаще используется в тех областях, 
 
 
 
-### ****Collections 
+### ****Коллекции 
 
 
 
 
-JavaScript does not have proper collection types. Hence, people often use objects as maps from strings to values and as sets of strings. But using them correctly in this role is [difficult](http://www.2ality.com/2012/01/objects-as-maps.html). ECMAScript.next will provide three collection types: [`Map`](http://wiki.ecmascript.org/doku.php?id=harmony:simple_maps_and_sets), [`Set`](http://wiki.ecmascript.org/doku.php?id=harmony:simple_maps_and_sets) and [`WeakMap`](http://wiki.ecmascript.org/doku.php?id=harmony:weak_maps). Maps can have arbitrary keys \(not just strings\) and are used as follows: 
+JavaScript не имеет подходящих типов коллекций. Поэтому программисты часто используют объекты в качестве карт (?). Но использование объекта в такой роли достаточно [сложно](http://www.2ality.com/2012/01/objects-as-maps.html). ECMAScript.next предоставит три типа коллекций: [`Map`](http://wiki.ecmascript.org/doku.php?id=harmony:simple_maps_and_sets), [`Set`](http://wiki.ecmascript.org/doku.php?id=harmony:simple_maps_and_sets) и [`WeakMap`](http://wiki.ecmascript.org/doku.php?id=harmony:weak_maps). `Map` может использовать произвольные ключи \(не только строки\):
 
     let map = new Map();
 
     let obj = {};
 
 
-    map.set(true, 1); // key not converted to string!
+    map.set(true, 1); // key не проеобрадуется в строку!
 
     map.set("true", 2);
 
@@ -1208,7 +1208,7 @@ JavaScript does not have proper collection types. Hence, people often use object
 
     console.log(map.has(obj)); // false
 
-The following code demonstrates sets:
+Следующий код демонстрирует использование типа set:
 
     let set = new Set();
 
@@ -1220,7 +1220,7 @@ The following code demonstrates sets:
 
     console.log(set.has("world")); // false
 
-A weak map is a map that holds objects without preventing them from being garbage-collected: Neither keys nor values are held strongly — if they are only referenced by weak maps, then they will be disposed of. Furthermore, one cannot iterate over keys, values or entries of weak maps. You must have a key in order to get to a value. That enables security applications where secrets are kept in a shared data structure. One use case is to hold instance-private data in a shared global weak map. The keys of the weak map are the instances; the values are objects with the private data. If an instance is garbage-collected, the associated private data will be disposed of, too. 
+Тип данных weak map представляет собой тип map, который не запрещает сборщику мусора удалять включенные элементы: это касается как ключей так и значений - если на них ссылается только объект типа weak map они будут утилизированны. Ктому же, объект типа weak map нельзя итерировать по ключам, значениям или записям. Вы должны иметь ключ, чтобы получить значение. Это позволит создавать безопасные приложения. Одним из возможных вариантов использования якляется случай, при котором приватные данные содержатся в общедоступной структуре: в таком случае ключами weak map являются экземпляры объектов, а значениями приватная информация. Если экземпляр объекта будет удален, то и ассоцииронное с ним значение также будет утилизированно сборщиком мусора.
 
 
 
