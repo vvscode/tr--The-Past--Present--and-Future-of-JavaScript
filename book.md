@@ -700,7 +700,7 @@ JavaScript не имеет встроенной поддержки модуле�
 
 
 
-### ****Loops and iteration 
+### ****Цыклы и итераторы
 
 
 
@@ -795,7 +795,7 @@ JavaScript не имеет встроенной поддержки модуле�
 
 
 
-### ****Generators 
+### ****Генераторы
 
 [Генераторы](http://wiki.ecmascript.org/doku.php?id=harmony:generators) - это легковесные подпрограммы. При вызове они создают объект, который является оберткой фукции. Выполнение функции можно продолжать с помощью метода `next()` и приостанавливать выполнение при помощи оператора `yield`  \(внутри функции\); `yield` очень похож на оператор `return` и обеспечивает возвращаемое значения для  вызова `next()`. Генератор создается ключевым словом `function*` \(нельзя использовать ключевое слово `generator` т.к. это может сломать существующий код\). Давайте позьмем обычную функцию `iterTreeFunc` и превратим ее в генератор. 
 
@@ -1027,24 +1027,24 @@ JavaScript все чаще используется в тех областях, 
 
 
 
-### ****Quasi-literals for string interpolation 
+### ****Квази-литералы для строковой интерполяции
 
 
 
 
-String interpolation such as templating is a very common operation in JavaScript. [Quasi-literals](http://wiki.ecmascript.org/doku.php?id=harmony:quasis) help with it. A quasi literal is written as 
+Строковая интерполяция, такая как шаблоны, очень распространенная операция в JavaScript. [Квази-литералы](http://wiki.ecmascript.org/doku.php?id=harmony:quasis) упрощают ее использование. Квази-литералы записываются как
 
     quasiHandler`Hello ${firstName} ${lastName}`
 
-Roughly, this is just a different way of writing a function call: 
+Грубо говоря, это всего лишь альтернативный способ вызова функции: 
 
     quasiHandler("Hello ", firstName, " ", lastName)
 
-The actual handler invocation is a bit more complex. Among other things, it allows the handler to make the distinction between the static parts \(such as `"Hello"`\) and the dynamic parts \(such as `firstName`\). Some handlers benefit from caching the former, e.g. when the same invocation is made multiple times in a loop. 
+На самом деле вызов обработчика немного сложнее. Среди прочего, обработчик различать статические \(например, `"Привет"`\) и динамические части \(например, `Имя`\). Также обработчик использует кэширование предыдущих вызовов, например когда один и тот же вызов выполняется несколько раз в цикле. 
 
-A few usage examples:
+Несколько примеров использования:
 
-**Raw strings:** string literals with multiple lines of text and no interpretation of escaped characters. 
+**"Сырые" строки:** строковые литералы состоящие из нескольких строк текста без интерпретации управляющих символов. 
 
     let str = raw`This is a text
 
@@ -1054,35 +1054,35 @@ A few usage examples:
 
     \n is not a newline.`;
 
-**Simple string interpolation:**
+**Интерпретация простых строк:**
 
     alert(`Error: expected ${expected}, but got ${actual}`);
 
-By omitting the handler name, the above code invokes a default handler. In Node.js, the same command would be written as 
+При опущенном имени интерпретатора код выше выполнит обработчик по умолчанию. В Node.js такая же команда будет записана как 
 
     alert(util.format("Error: expected %s, but got %s", expected, actual));
 
-**Parameterized regular expression literals that ignore whitespace:**
+**Параметризованный литерал регулярного выражения, игнорирующий пробельные символы:**
 
     re`\d+ ( ${localeSpecificDecimalPoint} \d+ )?`
 
-Above, `localeSpecificDecimalPoint` contains either a dot or a comma, and will be quoted appropriately before being inserted into the regular expression. Additionally, whitespace is ignored, so you can insert spaces and newlines to make the regular expression more readable. 
+Выше, `localeSpecificDecimalPoint`, содержащий точку или запятую, будет экранирован непосредственно перед вставкой в регулярное выражение. При этом пробелные символы будут игнорироваться, поэтому Вы можете вставлять пробелы и символы перехода на новую строку для того, чтобы сделать регулярное выражение более читабельным. 
 
-**Arguments for query languages:**
+**Аргументы для языков запросов:**
 
     $`a.${className}[href=~'//${domain}/']`
 
-Similarly to the regular expression example, `className` and `domain` are to be inserted into the query language command and will be escaped properly. 
+Подобно примеру с регулярным выражением, `className` и `domain` будут вставлены в команду языка запросов и экранированы должным образом. 
 
-**Localizable messages:**
+**Локализированные сообщения:**
 
     alert(msg`Welcome to ${siteName}, you are visitor
 
               number ${visitorNumber}:d!`);
 
-Above, the static parts are used to look up a translation to the currently used language. The dynamic parts are inserted into the result, possibly after having been reordered. The marker `:d` indicates that `visitorNumber` should be displayed with a locale-specific decimal separator \(English 1,300 versus German 1.300\). 
+Статические части в выражении выше используются для поиска перевода на выбранный в настоящий момент язык. Динамические части будут вставлены в результат после возможной обработки. Флаг `:d` говорит, что `visitorNumber` следует отображать, использую десятичный разделитель в соответствии с текущей локалью \(Английская локаль - 1,300, Немецкая - 1.300\). 
 
-**Templates:**
+**Шаблоны:**
 
     let myTmpl = tmpl`
 
@@ -1092,7 +1092,7 @@ Above, the static parts are used to look up a translation to the currently used 
 
     `;
 
-The handler will get the template content in a parsed \(segmented\) version and compile it. Note that `{title}` is an object literal and an abbreviation for `{ title: title }`. 
+Обработчик получит версию в виде разобранного шаблона \(разделенного на сегменты\) и скомпилирует его. Отметим, что `{title}` является литералом объекта и сокращением от `{ title: title }`.
 
 
 
