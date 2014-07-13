@@ -1277,22 +1277,22 @@ JavaScript не имеет подходящих типов коллекций. �
 
 
 
-## ****JavaScript as a Compilation Target 
+## ****JavaScript как результат компиляции 
 
 
 
 
-ECMAScript Harmony goal \(1c\) might be surprising: “Be a better language for writing code generators.” But JavaScript is indeed increasingly becoming the target language for compilers. A few examples: 
+Цель ECMAScript Harmony\(1c\) возмоно окажется для кого-то сюрпризом: "Стать лучшим языком для создания генераторов кода". Но действительно, JavaScript все больше и больше становиться целевым языком для компиляторов. Вот несколько примеров:
 
 
-+  The [Google Web Toolkit](https://developers.google.com/web-toolkit/) \(GWT\) allows one to write web applications completely in Java. On the server, Java is executed directly. On the client, it is compiled to JavaScript.  
-+  [CoffeeScript](http://coffeescript.org/) is a dialect of JavaScript that has a different syntax, avoiding braces and semicolons, and simplifies several tasks.  
-+  Google’s [Traceur](http://code.google.com/p/traceur-compiler/) compiles a variant of ECMAScript.next to JavaScript, on the fly.  
-+  [Emscripten](https://github.com/kripken/emscripten/wiki) compiles LLVM bitcode to JavaScript. That bitcode can be generated from C and C\+\+, which means that many interesting C-based projects suddenly run on JavaScript engines. A few examples: SQLite \(an SQL database\), eSpeak \(a speech synthesizer\), FreeType \(a TrueType font rendering engine\). Surprisingly, the generated JavaScript code runs quite fast.  
-+  Minification transforms a JavaScript program into a more compact version of itself without changing what it does. Measures taken are: stripping out comments and newlines, using shorter variables names, etc.  
++  [Google Web Toolkit](https://developers.google.com/web-toolkit/) \(GWT\) позволяет создавать web-приложение полностью на Java. На сервере, Java исполняется напрямую. В то время как клиентская часть компилируется в JavaScript.
++  [CoffeeScript](http://coffeescript.org/) - диалект JavaScript, который имеет синтаксис отличный от JavaScript (отсутствуют фигурные скобки и символ точки с запятой), упрощает некоторые задачи.
++  [Traceur] от Google (http://code.google.com/p/traceur-compiler/) компилирует код ECMAScript.next в JavaScript на лету.
++  [Emscripten](https://github.com/kripken/emscripten/wiki) компилирует LLVM байткод в JavaScript. Этот байткод может быть сгенерирован из кода на C и C\+\+, что позволяет множеству интересных проектов на базе C быть запущенными на движке JavaScript. Вот несколько примеров: SQLite \(SQL база данных\), eSpeak \(синтезатор речи\), FreeType \(движок рендеринга шрифтов\). Удивительно, но полученный JavaScript код выполняется достаточно быстро.  
++  Минификация программного кода на  JavaScript позволяет получить более компактную версию программы без нарушения ее функциональности. Для этого используетя удаление комментариев, символов перевода каретки, короткие имена переменных и так далее. 
 
 
-Some even call JavaScript the “assembly language of the web.” But while being a good compilation target has been a goal for ECMAScript.next, making it a good programming language in its own right is even more important, so languages compiling to JavaScript will always face stiff competition from JavaScript itself. 
+Некоторые даже называю JavaScript "асемблером в web". Но в тоже время, свойства целевого языка для компиляции ECMAScript.next, делают его хорошим языком программирования для решения собственных задач, что еще более важно. Таким образом языки, которые компилируются в JavaScript, будут сталкиваться с конкуренцией со стороны самого JavaScript.
 
 
 
