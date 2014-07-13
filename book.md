@@ -1226,12 +1226,12 @@ JavaScript не имеет подходящих типов коллекций. �
 
 
 
-### ****API improvements 
+### ****Улучгение API 
 
 
 
 
-Several smaller improvements of the standard library have been proposed. Some of them provide new functionality: 
+Было предложено несколько небольших улучшений стандартной библиотеки. Некоторые из них реализуют абсолютно новую функциональность: 
 
     > "abc".repeat(3)
 
@@ -1245,7 +1245,7 @@ Several smaller improvements of the standard library have been proposed. Some of
 
     true
 
-Others fix quirks:
+Другие исправляют причуды языка:
 
     > Array.of(1, 2, 3)
 
@@ -1259,17 +1259,17 @@ Others fix quirks:
 
     false
 
-The above constructs fix the following quirks:
+В конствукци выше исправлены следуюшие неочевидные особенности
 
     > new Array(1, 2, 3)  // OK
 
     [ 1, 2, 3 ]
 
-    > new Array(3)  // quirk: empty array of length 3
+    > new Array(3)  // пустой массив длинной 3
 
     [ , ,  ]
 
-    > isNaN("abc")  // quirk: converts to number first
+    > isNaN("abc")  // сначала происходит преведение типа
 
     true
 
