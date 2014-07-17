@@ -1277,7 +1277,7 @@ JavaScript не имеет подходящих типов коллекций. �
 
 
 
-## ****JavaScript как результат компиляции 
+## ****Компиляция в JavaScript 
 
 
 
@@ -1298,20 +1298,20 @@ JavaScript не имеет подходящих типов коллекций. �
 
 
 
-### ****Staying in the source language 
+### ****Скопмилированный JavaScript и исходный язык
 
 
 
 
-When a source language is compiled to JavaScript, we want to work with the former as much as possible. Alas, that is currently infeasible when it comes to running the code: 
+Когда исходный язык компилируется в JavaScript, мы хотели бы работать с оригинальным кодом как можно больше. Но увы, это не возможно года дело доходит до выполнения программы:
 
 
-+  Exceptions report lines in the target code, not in the source language code.  
-+  Output in the browser console links back to target code.  
-+  Debugging has to be done in the target code.  
++  Сообщения исключений ссылаются на строки кода, полученного в ходе компиляции, а не исходной текста.
++  Сообщения в консоли браузера также указывают на скомпилированный код.
++  Отладка возможна только в скомпилированном коде.
 
 
-[Source Maps](http://www.thecssninja.com/javascript/source-mapping) help with staying in the source language in all three cases: If a file `file.orig` \(where `orig` is `java`, `cs`, etc.\) has been compiled to a JavaScript file `file.js`, then a Source Map is a companion file `file.js.map`. It maps locations in `file.js` to locations in `file.orig`. That mapping is used to report errors with `file.orig`’s line numbers and to link to its source from the console. Working with a debugger in the original language will also eventually be possible. Firefox and WebKit already have preliminary support for Source Maps. 
+[Source Maps](http://www.thecssninja.com/javascript/source-mapping) помогает "оставаться" в коде исходного языка во всех трех случаях: если файл \(where `orig` is `java`, `cs`, etc.\) был скомпилирован в JavaScript файл `file.js`, то Source Map находится в сопутствующем файле `file.js.map`. В этом файле отражается соответсвие между текстом исходного файла `file.js` и файла-результата `file.orig`. Это соответствие используется для отображения в консоли номеров строк файла `file.orig` и ссылок на эти строки. Работать с отладчиком в исходном языка также будет возможно. Firefox и WebKit уже имеют базовую поддержку Source Maps.
 
 
 
