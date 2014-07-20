@@ -1348,14 +1348,12 @@ JavaScript не имеет подходящих типов коллекций. �
 
 
 
-### ****Concurrency 
+### ****Распаралеливание
 
 
+Долгое время увеличение скорости вычислений происходило за счет создания более быстрых процессоров. Но скорость улучшения процессоров уменьшилась. Так что дальнейшее увеличение скорости должно происходить за счет использования нескольких процессоров в параллельных режимах. Так что если помнить о дальнейшем развитии языка, то в нем должна появиться поддержка параллельной работы. Её очень не просто сделать на должном уровне, но уже предложено несколько перспективных вариантов развития в этом направлении.
 
-
-For a long time, computing speed increases came from faster processor cores. But the rate of those increases has slowed down. Further speed improvements must come from using more cores, in parallel. Therefore, if a programming language is to be general purpose, it must support concurrency. Such support is difficult to get right, but several promising approaches have been proposed for JavaScript. 
-
-[**Web Workers**](https://developer.mozilla.org/En/Using_web_workers) \[5\] are the current weapon of choice for concurrent computation in JavaScript. All modern browsers support it and so does Node.js. A worker is JavaScript code that runs in a new operating system thread and has limited access to its environment \(e.g., it can’t access the browser’s DOM\). Workers and the main thread can only communicate by sending simple messages, either strings or JSON data. All of these limitations make workers a robust mechanism — one is relatively safe from concurrency problems such as deadlocks. The following code shows how the main thread starts a worker, waits for messages via a “message” listener, and sends a message to the worker \(the string `"Hello worker!"`\). 
+[**(Веб-вокреры)Web Workers**](https://developer.mozilla.org/En/Using_web_workers) \[5\] - это текущая реализация параллельных вычислений в JavaScript. Ее поддерживают все современные браузеры и Node.js. Воркер - это  JavaScript код, который выполняется в новом потоке, создаваемом операционной системой, который имеет ограниченный доступ к окружению  \(например, он не имеет доступа к DOM-дереву документа \). Workers и основной поток могут взаимодействовать только посредством обмена простыми сообщениями, такими как строки или JSON объекты. Все эти ограничения делают механизм вполне устойчивым — каждый поток защищен от проблем распараллеливания вроде блокировок. Следующий код демонстрирует как основной потом создает новый процесс, ожидает от него сообщение посредством "слушателя" сообщений и отправляет сообщения в поток \(строку`"Hello worker!"`\). 
 
     var worker = new Worker('worker_code.js');
 
@@ -1367,7 +1365,7 @@ For a long time, computing speed increases came from faster processor cores. But
 
     worker.postMessage("Hello worker!");
 
-The code in `worker_code.js` looks as follows. It listens for “message” events from the main thread and sends the message `"Hello main!"` to that thread. 
+Код в файле `worker_code.js` выглядит следующим образом. Он "подписан" на сообщения от основного потока и отправляет ему сообщение `"Hello main!"`.
 
     self.onmessage = function (event) {
 
@@ -1377,16 +1375,16 @@ The code in `worker_code.js` looks as follows. It listens for “message” even
 
     self.postMessage("Hello main!");
 
-Normal JavaScript code runs in the same thread as the user interface. Thus, executing long-running operations in the background via a worker keeps the UI responsive. If a worker needs more threads, it has the option to start new workers, so-called subworkers. 
+Обычный JavaScript работает в том же потоке, что и пользовательский интерфейс. Так что выполнение длительных операций в фоне посредством воркеров сохраняет "отзывчивость" интерфейса. Если воркеру нужно больше потоков, он может создавать новые экземпляры (т.н. подпотоки/subworkers).
 
-[**WebCL**](http://www.khronos.org/webcl/) \[6\] brings to JavaScript a subset of the [OpenCL standard](http://developer.apple.com/library/mac/#documentation/Performance/Conceptual/OpenCL_MacProgGuide/WhatisOpenCL/WhatisOpenCL.html) \[7\] that allows one to send tasks to multiple processing cores, including ones in graphical processing units. In OpenCL terminology, one runs kernels \(pieces of code\) on devices. Each device has one or more compute units, where the actual computation is performed. Work \(kernel \+ parameters\) is sent to devices via command queues, where it waits until a computation unit is free. On one hand, WebCL is very flexible. You can precisely control where your code should be executed. And two kinds of parallelism are supported: 
-
-
-+  Data parallelism: several instances of the same kernel run in parallel, each of them has its own data that it operates on.  
-+  Task parallelism: different kernels run in parallel, similar to the Unix model of spawning processes.  
+[**WebCL**](http://www.khronos.org/webcl/) \[6\] привносит в  JavaScript разновидность [OpenCL standard](http://developer.apple.com/library/mac/#documentation/Performance/Conceptual/OpenCL_MacProgGuide/WhatisOpenCL/WhatisOpenCL.html) \[7\], который позволяет отправлять задачи нескольким ядрам процессора, включая графический чипсет. В терминах OpenCL - он запускает ядра \(куски кода\) на устройствах. Каждое устройство имеет один или несколько рабочих модулей, где фактически выполняют вычисления. Задача \(ядро \+ параметры\) отправляется устройствам в очередь команд, где они ожидают, пока вычисляющий модуль освободится. WebCL очень гибок. ВЫ можете точно указывать где и как ваш код должен выполняться. Поддерживаются два вида параллельности: 
 
 
-On the other hand, WebCL requires much manual work: You have to manage devices yourself and need to write the OpenCL code in a C dialect. 
++  Параллельность данных: несколько экземпляров одного и того же ядра запускаются сразу,каждый из них имеет свой набор данных для.  
++  Распараллеливание задач: параллельно запускается несколько разных ядер/задач, Похоже на систему выполнения задач в Unix.  
+
+
+С другой стороны WebCL требует много "ручной" работы: Вы самостоятельно должны управлять устройствами и писать код для  OpenCL на диалекте C. 
 
 [**River Trail**](https://github.com/RiverTrail/RiverTrail/wiki) \[8\] is an experiment by Intel Labs that adds data parallelism to JavaScript, but without having to explicitly control it, as with WebCL. It introduces the new type `ParallelArray` with transformation methods that are parameterized via a function implementing the transformation \(a so-called elemental function\). Arrays have similar methods \(e.g. `Array.prototype.map`\), but `ParallelArray`’s methods execute their elemental functions several times in parallel. The following code uses `ParallelArray`: 
 
