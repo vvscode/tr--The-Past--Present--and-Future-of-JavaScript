@@ -1317,14 +1317,14 @@ JavaScript не имеет подходящих типов коллекций. �
 
 
 
-### ****Being a versatile compilation target 
+### ****Универсальный язык для компиляции 
 
 
 
 
-Several features in ECMAScript.next make it a more versatile compilation target. 
+Некоторые особенности ECMAScript.next делают его еще более универсальным при компиляции из других языков.
 
-**Avoiding stack growth for tail calls.** A tail call is a function call that is performed at the end of a function: 
+**Ограничение роста стека при хвостовой рекурсии.** Хвостовой рекурсией называю вызов самой себя, который выполняется в конце тела функции:
 
     function logNumbers(start, end) {
 
@@ -1332,11 +1332,11 @@ Several features in ECMAScript.next make it a more versatile compilation target.
 
         console.log(start);
 
-        logNumbers(start+1, end);  // tail call
+        logNumbers(start+1, end);  // хвостовой вызов
 
     }
 
-Under current JavaScript, the stack grows with each tail call. But that is unnecessary because the call does not need to go back to its call site \(e.g. to return a value\). Most functional programming languages avoid stack growth in such cases. There is a [proposal](http://wiki.ecmascript.org/doku.php?id=harmony:proper_tail_calls) that would allow JavaScript engines to do the same. Naturally, that would make JavaScript a more appealing compilation target for functional languages. 
+В текущей реализации языка, стек будет расти при каждом вызове функции. Но в этом нет необходимости потому, что в данном случае нет необходимости возвращаться к точку вызова \(например, возвращать значение\). Большинство функциональных языков ограничивают росте стеку вызова в подобных случаях. Вот [предложение](http://wiki.ecmascript.org/doku.php?id=harmony:proper_tail_calls), которое позволило бы делать интерпретатору JavaScript делать тоже самое. На самом деле, это сделало бы более привлекательным компиляцию функциональных языков в JavaScript. 
 
 **More useful features:**
 
