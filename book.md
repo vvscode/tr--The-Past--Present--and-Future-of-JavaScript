@@ -1411,25 +1411,25 @@ Conveniently, one has the option of using a sequential implementation of `Parall
 
 
 
-
-## ****Writing Non-Web Applications in JavaScript 
-
-
+ 
+## ****Создание приложений на JavaScriot не для Web
 
 
-HTML5 is slowly becoming a complete layer for writing full-featured cross-platform applications. Similar to, say, the Java platform. 
-
-**Mobile apps: [PhoneGap](http://phonegap.com/)** — PhoneGap is a project that allows you to write mobile apps in HTML5. Those apps will run on seven platforms: iOS \(iPhone, iPod touch\), Android, Blackberry, webOS, Windows Phone, Symbian, and Bada. Apart from HTML5 APIs, there are also PhoneGap-specific APIs for accessing [native features](http://phonegap.com/about/features) such as accelerometer, camera and contacts. Given how well web technologies are supported by mobile platforms these days, HTML5 has become the best choice for writing cross-platform mobile apps. PhoneGap allows you to deploy those apps natively. 
-
-**Desktop apps: Mozilla’s [Open Web Apps project](https://developer.mozilla.org/en/Apps)** — The most interesting aspect of this project is that it supports desktop operating systems: It lets you install a web application as a native application on Windows, Mac OS and Android. Such an application is run via the Firefox code, but in its own process. That is, it looks and feels like a separate application. It also has its own profile \(preferences, cookies, history, etc.\) and its windows don’t have browser chrome. For example, there is no address bar. 
-
-These two efforts are complemented by the [WebAPI project](https://wiki.mozilla.org/WebAPI), which is about making more native capabilities available via HTML5 APIs. Examples: 
 
 
-+  WebTelephony: Answer and place phone calls.  
-+  Camera API: Access a built-in camera for recording photos and live video. Part of [WebRTC](http://www.webrtc.org/), where it is needed for video conferencing.  
-+  WiFi Information API: Detect available WiFi networks, find out their signal strength, the name of the currently connected network, etc.  
-+  Contacts API: Read and modify a device’s native address book.  
+Постепенно HTML5 становится основой для создания полноценных кросс-платформенных приложений, подобно тому как это происходило с Java. 
+
+**Мобильные приложения: [PhoneGap](http://phonegap.com/)** — PhoneGap - это проект, который позволяет Вам писать мобильные приложения с использованием HTML5. Эти приложения будут выполнятся на семи платформах: iOS \(iPhone, iPod touch\), Android, Blackberry, webOS, Windows Phone, Symbian, и Bada. Кроме HTML5 API, также существует специальное API для доступа к [проприетарным функциям](http://phonegap.com/about/features) таким как акселерометр, камера и контакты. Зародившееся как web-технология, и поддерживающая мобильные платформы сегодня, HTML5 стал лучшим выбором для создания кросс платформенных мобильный приложений. 
+
+**Приложение для стационарных компьютеров: [Open Web Apps project](https://developer.mozilla.org/en/Apps)** - наиболее интересным аспектом этого проекта является то, что он поддерживается операционными системами обычный компьютеров: это, в свою очередь, позволяет устанавливать web-приложения как нативное на Windows, Mac OS и Android. Так как приложение выполняется при помощи Firefox, но в своем отдельном процессе. Что выглядит и работает как отдельное приложение. Оно также имеет свои уникальные свойства \(настройка, cookies, историю и т.д.\), и окно приложения не выглядит как окно браузера. Например, оно не имеет адресной строки.
+
+Эти два фактора обеспечивают [WebAPI project](https://wiki.mozilla.org/WebAPI) более полную совместимость посредством HTML5 APIs. Например: 
+
+
++  Web-телефония: ответ и удержание звонка.  
++  Camera API: доступ к встроенной камере для создания снимков и записи видео. Часть [WebRTC](http://www.webrtc.org/), необходима видео связь. 
++  API для доступа к WiFi: непосредственно доступные сети, определение уровня их сигнала, имя сети, к которой в настоящий момент подключено устройство и т.д.  
++  API для доступа к списку контактов: чтение и изменение встроенной адресной книги устройства.  
 
 
 All previous solutions hosted HTML5 on top of a native layer. But there are also operating systems where HTML5 *is* the native layer \(or at least very tightly integrated with it\). Examples: 
