@@ -1432,17 +1432,16 @@ Conveniently, one has the option of using a sequential implementation of `Parall
 +  API для доступа к списку контактов: чтение и изменение встроенной адресной книги устройства.  
 
 
-All previous solutions hosted HTML5 on top of a native layer. But there are also operating systems where HTML5 *is* the native layer \(or at least very tightly integrated with it\). Examples: 
+Все преведущие решения использовали HTML5 поверх нативного слоя. Но еще существует операционная система, где HTML5 *является* нативным \(или, по крайней мере, тесно интегрированным с ней\). На пример:
 
 
-+  2009: The GUI layer of the Palm webOS \(now [Open webOS](https://developer.palm.com/)\) is based on HTML.  
-+  2009: Google’s [Chrome/Chromium OS](http://www.chromium.org/chromium-os) could be called a “browser operating system.”  
-+  2011: Microsoft’s [Windows 8](http://windows.microsoft.com/en-US/windows-8/consumer-preview) makes JavaScript a first-class language. Several important applications are written in JavaScript, such as the native application store and the email program.  
-+  2011: Mozilla’s [Boot to Gecko](http://www.mozilla.org/en-US/b2g/) project is similar to Chrome OS, but targets all mobile devices and especially mobile phones. Chrome OS mostly targets a notebook-like form factor.  
++  2009: GUI слой Palm webOS \(в настоящее время [Open webOS](https://developer.palm.com/)\) основанный на HTML. 
++  2009: [Chrome/Chromium OS] от Google (http://www.chromium.org/chromium-os), которую можно назвать "операционной системой браузера"
++  2011: [Windows 8] от Microsoft (http://windows.microsoft.com/en-US/windows-8/consumer-preview) сделала JavaScript языком первого класса. Несколько важных приложениец написаны на JavaScript, таких как встроенные магазин приложений и email-клиент.
++  2011: Mozilla’s [на основе Gecko](http://www.mozilla.org/en-US/b2g/) проект очень похож на Chrome OS, но нацеленна на все мобильные устройства и особенно на мобильные телефоны, в то врея как Chrome OS используется на ноутбуках.
 
 
-HTML5 greatly profits from these endeavors because they advance the platform. If all you have is HTML5, you quickly find out what native APIs you are missing. Their replacements can then become the blueprints for cross-platform APIs. 
-
+HTML5 сильно выигрывает от этого, потому что эти решения продвигают платформу. Если HTML5 - это все, что у вас есть, вы быстро поймете, что у вас нет нативного API. Его замещение может в будещем стать основой для крос-платформенного API. 
 
 
 
