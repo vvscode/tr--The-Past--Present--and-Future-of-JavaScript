@@ -1432,28 +1432,27 @@ Conveniently, one has the option of using a sequential implementation of `Parall
 +  API для доступа к списку контактов: чтение и изменение встроенной адресной книги устройства.  
 
 
-Все преведущие решения использовали HTML5 поверх нативного слоя. Но еще существует операционная система, где HTML5 *является* нативным \(или, по крайней мере, тесно интегрированным с ней\). На пример:
+Все предыдущие решения использовали HTML5 поверх нативного слоя. Но еще существует операционная система, где HTML5 *является* нативным \(или, по крайней мере, тесно интегрированным с ней\). На пример:
 
 
 +  2009: GUI слой Palm webOS \(в настоящее время [Open webOS](https://developer.palm.com/)\) основанный на HTML. 
 +  2009: [Chrome/Chromium OS] от Google (http://www.chromium.org/chromium-os), которую можно назвать "операционной системой браузера"
-+  2011: [Windows 8] от Microsoft (http://windows.microsoft.com/en-US/windows-8/consumer-preview) сделала JavaScript языком первого класса. Несколько важных приложениец написаны на JavaScript, таких как встроенные магазин приложений и email-клиент.
-+  2011: Mozilla’s [на основе Gecko](http://www.mozilla.org/en-US/b2g/) проект очень похож на Chrome OS, но нацеленна на все мобильные устройства и особенно на мобильные телефоны, в то врея как Chrome OS используется на ноутбуках.
++  2011: [Windows 8] от Microsoft (http://windows.microsoft.com/en-US/windows-8/consumer-preview) сделала JavaScript языком первого класса. Несколько важных приложение написаны на JavaScript, таких как встроенные магазин приложений и email-клиент.
++  2011: Mozilla’s [на основе Gecko](http://www.mozilla.org/en-US/b2g/) проект очень похож на Chrome OS, но нацелена на все мобильные устройства и особенно на мобильные телефоны, в то время как Chrome OS используется на ноутбуках.
 
 
-HTML5 сильно выигрывает от этого, потому что эти решения продвигают платформу. Если HTML5 - это все, что у вас есть, вы быстро поймете, что у вас нет нативного API. Его замещение может в будещем стать основой для крос-платформенного API. 
-
-
-
-
-# ****A JavaScript Wishlist 
+HTML5 сильно выигрывает от этого, потому что эти решения продвигают платформу. Если HTML5 - это все, что у вас есть, вы быстро поймете, что у вас нет нативного API. Его замещение может в будущем стать основой для кросс-платформенного API. 
 
 
 
 
-While many interesting JavaScript-related projects are underway, there are still a few things that are missing. This section describes those things. 
+# ****Список пожеланий
 
-**A good integrated development environment \(IDE\).** The thing I miss most in JavaScript, coming from Java, is a good IDE. Several already exist, but none of them work nearly as well for JavaScript as, say, Eclipse does for Java \(to be fair, they are constantly being improved and writing an IDE for a language takes time\). One piece of the IDE puzzle is to automatically compute type information \(e.g. which types the parameters of a function normally have\), via type inference. New [type inference approaches](http://blog.mozilla.org/futurereleases/2011/11/10/type-inference-to-firefox-beta/) are currently being experimented with. Hopefully, class declarations will eliminate the multitude of inheritance libraries that JavaScript currently has, which would help here. After ECMAScript.next, two proposals might be accepted that would be equally helpful. First, [guards](http://wiki.ecmascript.org/doku.php?id=strawman:guards) allow one to annotate variable declarations, parameter declarations, function results and property definitions. The annotations enforce user-defined invariants, including types. Three examples from the proposal: 
+
+
+В то время, пока разрабатывается множество проектов связанных с JavaScript, все еще несколько вещей упущено. Эта часть описывает эти моменты.
+
+**Хорошая интегрированная среда разработки \(EDI\).** Вещь, которой мне не хватает больше всего - это хорошая EDI. Уже существует несколько EDI, но ни одна из них не работает с JavaScript так хорошо как, скажем, Eclipse с Java \(справедливости ради, стоит отметить, что создание и отладка EDI для языка требует времени\). Одна из трудностей - это автоматическое определение информации о типе \(т.е. какие типы параметров функции обычно принимает\). В настоящий момент экспериментируют с новыми [способы определения типа](http://blog.mozilla.org/futurereleases/2011/11/10/type-inference-to-firefox-beta/). Надеюсь, определение классов устранит множество библиотек, реализующий механизмы наследования, которые сейчас имеет JavaScript. После принятия ECMAScript.next два предложения быть одинаково полезны. Первое - это [guards](http://wiki.ecmascript.org/doku.php?id=strawman:guards), которое позволяет делать аннотации объявления переменной, параметров и результатов функции, определения свойств. Аннотации требуют соблюдения определенных пользователем инвариантов, включая типы. Пример из данного предложения:
 
     let x :: Number = 37;
 
@@ -1461,9 +1460,9 @@ While many interesting JavaScript-related projects are underway, there are still
 
     let o = {a :: Number : 42, b: "b"};
 
-Second, multiple inheritance is another type system mechanism that is currently implemented by libraries in JavaScript. It comes in many variations, under names such as mixins and traits. There is a proposal to add a version of [traits](http://wiki.ecmascript.org/doku.php?id=strawman:traits_semantics) to ECMAScript. Roughly, this proposal lets you assemble a “class” from “class fragments” \(traits\). 
+Второе - это множественное наследование. Механизм, который в настоящее время реализован при помощи сторонних библиотек. Доступно множество вариаций этого механизма, известных под названиями "миксины" или "трейты". Существует предложение добавления [терейтов](http://wiki.ecmascript.org/doku.php?id=strawman:traits_semantics) в ECMAScript. Грубо говоря, это позволит собирать "класс" из "фрагментов класса" \(трейтов\).
 
-The thing to keep in mind is that we shouldn’t just apply the ideas of current static IDEs to JavaScript; we should take JavaScript’s dynamic nature into consideration. You can have an environment where you rarely restart a program, but continually evolve it. We thus need to revisit lessons learned from dynamic development environments such as Lisp on the [Genera Operating System](http://en.wikipedia.org/wiki/Genera_%28operating_system%29), various Smalltalk systems, and Self. 
+Следует иметь в виду, что нам не следует просто применять идеи существующих статических IDE к JavaScript; следует взять во внимание динамическую природу JavaScript. Вы можете иметь среду, где вы редко перезапускаете программу, но постоянно изменяете ее. Т.о. нам необходимо извлечь урок из динамических сред разработки, таких как Lisp в [операционной среде Genera](http://en.wikipedia.org/wiki/Genera_%28operating_system%29), различные системы Smalltalk и Self.
 
 **A merging of the browser platform and Node.js.** Currently, the two JavaScript platforms browser and Node.js diverge in two ways: They use different module systems and their APIs are different. The former difference will be eliminated via ECMAScript.next’s common module system. The latter is especially unfortunate because more and more HTML5-based applications are written for native deployment, which has more in common with a server-side environment than with a client-side environment. Node.js has the highly useful Node Package Manager \(npm\) and its vibrant community. Many of the npm packages would be just as useful in a browser. Yes, there are differences, but I don’t see why they couldn’t be abstracted over. 
 
