@@ -1548,46 +1548,46 @@ ECMAScript.next - следующая версия JavaScript, должна ре�
 # ****
 
 
-# ****The Past, Present, and Future of JavaScript 
+# ****Прошлое, Настоящее, и будущее JavaScript 
 
 
 
 
-### **Axel Rauschmayer**
+### **Аксель Раушмаер**
 
 
 
 
-#### Editor
+#### Редактор
 
-### Mac Slocum
-
-
-
-Revision History   2012-07-20 First release   
+### Мак Слокум
 
 
 
-Copyright © 2012 Axel Rauschmayer
+История редакций   2012-07-20 Певое издание   
 
 
 
-
-O’Reilly books may be purchased for educational, business, or sales promotional use. Online editions are also available for most titles \([http://my.safaribooksonline.com](http://my.safaribooksonline.com/?portal=oreilly)\). For more information, contact our corporate/institutional sales department: 800-998-9938 or corporate@oreilly.com. 
+Copyright © 2012 Аксель Раушмаер
 
 
 
 
-
-Nutshell Handbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of O’Reilly Media, Inc. *The Past, Present, and Future of JavaScript* and related trade dress are trademarks of O’Reilly Media, Inc. 
-
-Many of the designations used by manufacturers and sellers to distinguish their products are claimed as trademarks. Where those designations appear in this book, and O’Reilly Media, Inc., was aware of a trademark claim, the designations have been printed in caps or initial caps. 
+Книги O’Reilly могут быть куплены для образования, бизнеса или продаж в рекламных целях. Онлайн редакции также доступны для изданий \([http://my.safaribooksonline.com](http://my.safaribooksonline.com/?portal=oreilly)\). Для получения дополнительной информации обращайтесь в наш отдел продаж: 800-998-9938 или corporate@oreilly.com.
 
 
 
 
+Логотип справочника и логотип O’Reilly являются зарегистрированной торговой маркой и принадлежат O’Reilly Media, Inc. *Прошлое, Настоящее, и будущее JavaScript* является торговой маркой O’Reilly Media, Inc.
 
-While every precaution has been taken in the preparation of this book, the publisher and authors assume no responsibility for errors or omissions, or for damages resulting from the use of the information contained herein. 
+
+Множество обозначений используемых производителями и распространителями их продукции являются обозначениями торговых знаков. 
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as trademarks. Если такие обозначения встречаются в этой книге, и O'Reilly Media, Inc., было известно о торговой марке, то к обозначению добавляется название торговой марки прописными или начальными буквами.
+
+
+
+
+В то время как все меры предосторожности были приняты в подготовке этой книги, издатель и авторы не несут никакой ответственности за ошибки или упущения, или за ущерб, возникший в результате использования информации, содержащейся в настоящем документе.
 
 
 
@@ -1602,4 +1602,3 @@ Sebastopol, CA 95472
 
 
 2012-08-09T07:56:23-07:00
-
