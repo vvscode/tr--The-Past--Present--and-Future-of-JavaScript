@@ -1538,10 +1538,9 @@ ECMAScript.next - следующая версия JavaScript, должна ре�
 
 
 
-# ****About the Author 
+# ****Об авторе 
 
-Dr. Axel Rauschmayer is a consultant and trainer for JavaScript, web technologies and information management. He has been programming since 1985, developing web applications since 1995 and held his first talk on Ajax in 2006. In 1999, he was technical manager at an internet startup that later expanded internationally. 
-
+Доктор Аксель Раушмаер консультант и инструктор по JavaScript, web-технологиям и информационному управлению. Практикующий программист с 1985 года, участвует в разработке web-приложений с 1995, в 2006 провел свою первую лекцию про AJAX. В 1999 был техническим менеджером интернет стартапа, который позднее стал интернациональным проектом.
 
 
 
