@@ -1515,12 +1515,12 @@ ECMAScript.next - следующая версия JavaScript, должна ре�
 
 
 
-# ****References 
+# ****Источники
 
 
 
 
-The following are references and sources for this article:
+Слудующий список послужил источником для данной стоатьи
 
 
 +  \[1\] “[The A-Z of Programming Languages: JavaScript](http://www.computerworld.com.au/article/255293/a-z_programming_languages_javascript/)” by Naomi Hamilton for Computerworld.  
